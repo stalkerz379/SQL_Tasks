@@ -1,0 +1,28 @@
+SQL Tasks (https://www.sql-ex.ru)
+
+Task 1
+Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd
+Answer:
+SELECT model, speed, hd FROM pc WHERE price > 500;
+
+Task 2 
+Найдите производителей принтеров. Вывести: maker
+Answer:
+SELECT DISTINCT maker FROM Product WHERE type='printer';
+
+Task 3 
+Найдите номер модели, объем памяти и размеры экранов ПК-блокнотов, цена которых превышает 1000 дол.
+Answer:
+SELECT model, ram, screen FROM laptop WHERE price > 1000;
+
+Task 4
+Найдите все записи таблицы Printer для цветных принтеров.
+Answer:
+SELECT * FROM printer WHERE color='y';
+
+Task 5
+Найдите номер модели, скорость и размер жесткого диска ПК, имеющих 12x или 24x CD и цену менее 600 дол.
+Answer:
+SELECT model, speed, hd FROM pc WHERE (cd='12x' OR cd='24x') AND price<600;
+
+
