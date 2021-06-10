@@ -1,5 +1,6 @@
 SQL Tasks (https://www.sql-ex.ru)
 
+
 Task 1
 Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd
 Answer:
@@ -24,5 +25,54 @@ Task 5
 Найдите номер модели, скорость и размер жесткого диска ПК, имеющих 12x или 24x CD и цену менее 600 дол.
 Answer:
 SELECT model, speed, hd FROM pc WHERE (cd='12x' OR cd='24x') AND price<600;
+
+Task 6
+Для каждого производителя, выпускающего ПК-блокноты c объёмом жесткого диска не менее 10 Гбайт, найти скорости таких ПК-блокнотов. Вывод: производитель, скорость.
+Answer:
+SELECT DISTINCT product.maker, laptop.speed FROM laptop RIGHT JOIN product ON product.model=laptop.model WHERE hd>=10;
+
+Task 9
+Найдите производителей ПК с процессором не менее 450 Мгц. Вывести: Maker
+Answer:
+SELECT DISTINCT maker FROM product INNER JOIN pc ON product.model=pc.model WHERE pc.speed>=450;
+
+Task 10
+Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+Answer:
+SELECT model, price FROM printer WHERE price=(SELECT max(price) FROM printer);
+
+Task 11
+Найдите среднюю скорость ПК.
+Answer:
+SELECT AVG(speed) AS speed FROM pc;
+
+Task 12
+Найдите среднюю скорость ПК-блокнотов, цена которых превышает 1000 дол.
+Answer:
+SELECT AVG(speed) AS speed FROM laptop WHERE price>1000;
+
+Task 13
+Найдите среднюю скорость ПК, выпущенных производителем A.
+Answer:
+SELECT AVG(speed) AS speed FROM pc INNER JOIN product ON pc.model=product.model
+WHERE product.maker='A';
+
+Task 14
+Найдите класс, имя и страну для кораблей из таблицы Ships, имеющих не менее 10 орудий.
+
+Answer:
+SELECT DISTINCT ships.class, ships.name, classes.country FROM ships INNER JOIN classes ON ships.class=classes.class WHERE classes.numGuns>=10;
+
+Task 15
+Найдите размеры жестких дисков, совпадающих у двух и более PC. Вывести: HD
+
+Answer:
+SELECT hd FROM pc GROUP BY hd HAVING COUNT(model)>=2;
+
+Task 16 
+Найдите пары моделей PC, имеющих одинаковые скорость и RAM. В результате каждая пара указывается только один раз, т.е. (i,j), но не (j,i), Порядок вывода: модель с большим номером, модель с меньшим номером, скорость и RAM.
+
+Answer:
+SELECT DISTINCT product1.model, product2.model, product1.speed, product1.ram FROM pc product1, pc product2 WHERE product1.speed=product2.speed AND product1.ram=product2.ram AND product1.model>product2.model;
 
 
