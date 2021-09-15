@@ -17,13 +17,13 @@
 `5. SELECT * FROM movies;`
 
 #### Exercise 2 — Tasks: Queries with constraints
-`1. Find the movie with a row id of 6 ✓
+`1. Find the movie with a row id of 6 ✓`
 
-2. Find the movies released in the years between 2000 and 2010 ✓
+`2. Find the movies released in the years between 2000 and 2010 ✓`
 
-3. Find the movies not released in the years between 2000 and 2010 ✓
+`3. Find the movies not released in the years between 2000 and 2010 ✓`
 
-4. Find the first 5 Pixar movies and their release year ✓`
+`4. Find the first 5 Pixar movies and their release year ✓`
 
 **Answers:**
 1. SELECT * FROM movies WHERE id=6;
