@@ -34,10 +34,14 @@
 `4. Find the first 5 Pixar movies and their release year ✓`
 
 **Answers:**
-1. SELECT * FROM movies WHERE id=6;
-2. SELECT * FROM movies WHERE year BETWEEN 2000 AND 2010;
-3. SELECT * FROM movies WHERE year NOT BETWEEN 2000 AND 2010;
-4. SELECT * FROM movies LIMIT 5;
+
+`1. SELECT * FROM movies WHERE id=6;`
+
+`2. SELECT * FROM movies WHERE year BETWEEN 2000 AND 2010;`
+
+`3. SELECT * FROM movies WHERE year NOT BETWEEN 2000 AND 2010;`
+
+`4. SELECT * FROM movies LIMIT 5;`
 
 #### Exercise 3 — Tasks: Queries with constraints
 `1. Find all the Toy Story movies ✓`
